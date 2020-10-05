@@ -1,4 +1,4 @@
-# Ysa's Personal Portfolio#
+# Ysa's Personal Portfolio
 
 ## This project is for my personal portfolio project for my DMG 1600 course ##
 

@@ -1,5 +1,62 @@
-background{
-    background-color: aliceblue;
-    color: purple
-}
-
+/* navbar jazz */
+#navbar {
+    background-color: #F6A395;
+    overflow: hidden;
+  }
+  
+  #navbar a {
+    float: right;
+    color: #ffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+  font-family: Montserrat;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: #748891;
+  }
+  
+  /* body */
+  body {
+    background-color: #FFE3DA;
+  font-family: Montserrat;
+  }
+  
+  /* welcome section */
+  
+  h1 {
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 50px;
+  color: #748891;
+  }
+  
+  /* project section */
+  .proj{
+    width: 100%;
+    height:200px;
+    display: flex;
+    align-content: center;
+  padding: 20px 0px 20px 0px;
+  background-color: #ddd;
+  color: white;
+  }
+  
+  /* contact section */
+  .contact {
+   width: 100%;
+    height:200px;
+    display: flex;
+    align-content: center;
+  background-color: #93A5AC;
+  color: #ddd;
+  }
+  
+  
+  /* footer */
+  footer {
+  background-color: #F6A395;
+  }
