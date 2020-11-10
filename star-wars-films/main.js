@@ -1,5 +1,4 @@
-import { films } from './data/films.js'
-import { people } from './data/films.js'
+import { films } from '../data/films.js'
 
 const main = document.querySelector('main')
 
@@ -12,10 +11,9 @@ for (let step = 0; step < 7; step++) {
 
     figure.appendChild(figImg)
     figure.appendChild(figCaption)
-    
-    main.appendChild(newImg)
-}
 
+    main.appendChild(figure)
+}
 
 /*people.forEach(person => {
 let newParagraph = document.body.appendChild(document.createElement('p'))
