@@ -88,17 +88,15 @@ html {
 
   .proj{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-    background-color: #ddd;
-    }
+  flex-direction: row;
+  background-color: #ddd;
+  }
 
   
   figure {
     background: salmon;
     padding: 20px;
     margin: 10px 40px 10px 40px;
-    justify-content: center;
     border-radius: 10px;
   }
 
