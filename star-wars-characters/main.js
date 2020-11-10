@@ -26,19 +26,23 @@ maleButton.addEventListener('click', event => {
     maleCharacters.forEach(element) => {
     const charFigure = document.createElement('figure')
     const charImg = document.createElement('img')
-    charImg.src = 'https://starwars-visualguide.com/assets/img/characters/1.jpg'
+    let charNum = getLastNumber(element.url)
+    charImg.src = 'https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg'
     const charCaption = document.createElement('figcaption')
-    charCaption.textContent = 'Luke Skywalker'
+    charCaption.textContent = element.name
 
     charFigure.appendChild(charImg)
     charFigure.appendChild(charCaption)
     }
 })
 
-let theUrl = "httup://swapi.co/api/people/2/"
+let theUrl = "https://swapi.co/api/people/2/"
+let theUrl2 = "https://swapi.co/api/people/"
 
 function getLastNumber(url) {
-console.log(url)
+let end = url.lastIndexOf('/')
+let start = end - 2
+if (url.charAt(start) === '/') { start++
 }
-
-getLastNumber(theUrl)
+return url.slice(start, end)
+}
