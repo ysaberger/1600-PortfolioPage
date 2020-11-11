@@ -3,10 +3,18 @@
     box-sizing: border-box;
 }
 
-.mainheader {
+.mainHeader {
     display: flex;
-    justify-content: space-between;
-    margin: 1rem;
+    justify-content: space-around;
+    margin: 2rem;
+}
+
+button {
+    background-color: yellow;
+    padding: 1rem;
+    border-radius: 1rem;
+font-weight: bolder;
+font-style: italic;
 }
 
 #main {

@@ -113,7 +113,8 @@ html {
   img {
    height: 25vh;
    border-radius: 10px;
-    }
+   justify-content: center;
+  }
   
     figcaption {
     max-width: 400px;
