@@ -1,19 +1,39 @@
 * {
 margin: 0px;
-box-sizing: border-box;
+box-sizing: border-box;}
 
-}
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border-color: yellow;
+border-width: 3px;
 }
 
 figure {
 margin: 1rem;
+padding: .5rem;
+background-color: yellow;
 }
 
 figcaption {
     text-align: center;
-    background-color: yellow;
+    color: black;
+    font-style: italic;
+    }
+
+.logo {
+    max-height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
 }
+
+header {
+color: yellow;
+justify-content: center;
+}
+    body {
+        background-image: url('/images/starryback.jpg');
+      }
