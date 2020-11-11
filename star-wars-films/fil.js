@@ -5,13 +5,15 @@ const main = document.querySelector('main')
 
 /*const films = ['3', '5', '4', '2', '7', '1', '6'];
 films.sort();
-console.log(films);*/
+c;*/
 
-/*films.sort((a, b) => {
-    return a.episode_id > b.episode_id
-    })*/
+films.sort((a, b) => {
+    console.log( a.episode_id, b.episode_id)
+    return a.episode_id - b.episode_id
+    })
+    console.log(films)
 
-let orderedFilms = [ 1, 5, 3, 4, 7, 2, 6]
+/*let orderedFilms = [ 1, 5, 3, 4, 7, 2, 6]
 let sortedFilms = (inputArr) => {
    for (let i = 1; i < length; i++) {
     while (j >= 0 && inputArr[j] > key) {
@@ -22,7 +24,7 @@ let sortedFilms = (inputArr) => {
    } 
    return inputArr
    orderedFilms.push (episode_id(sort))
-};
+};*/
 
 
 
@@ -44,7 +46,7 @@ for (let film of films) {
     else if (film.episode_id === 6) {
         figImg.src = `https://starwars-visualguide.com/assets/img/films/3.jpg`
     } else if (film.episode_id === 3) {
-        figImg.src = `https://starwars-visualguide.com/assets/img/films/4.jpg`
+        figImg.src = `https://starwars-visualguide.com/assets/img/films/6.jpg`
     } else if (film.episode_id === 2) {
         figImg.src = `https://starwars-visualguide.com/assets/img/films/5.jpg`
     }  else if (film.episode_id === 7) {
