@@ -96,6 +96,7 @@ html {
   q {
     text-align: center;
     text-decoration: none;
+    text-emphasis-color: blue;
   }
 
   .proj{
