@@ -93,12 +93,6 @@ html {
     font-size: 1.5em;
   }
 
-  q {
-    text-align: center;
-    text-decoration: none;
-    text-emphasis-color: blue;
-  }
-
   .proj{
   display: flex;
   flex-direction: row;
