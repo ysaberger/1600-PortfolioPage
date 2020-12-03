@@ -68,7 +68,9 @@ html {
     font-size: 50px;
     color: antiquewhite;
     text-align: center;
+    background-color: brown;
   }
+
    /* welcome section */
    #welcome-section {
     display: flex;
