@@ -1,4 +1,4 @@
-
+//Reusable function to fetch data
 async function getAPIData(url) {
 try {
     const respond = await fetch(url)
