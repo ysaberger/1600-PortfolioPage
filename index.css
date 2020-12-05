@@ -51,7 +51,6 @@ html {
     background-color: #FFE3DA;
   font-family: Montserrat;
   font-size: 1em;
-  color: blue;
   }
   
 
@@ -60,7 +59,6 @@ html {
   font-size: 50px;
   color: #748891;
   text-align: center;
-  background-color: blueviolet;
   }
   
   h3 {
@@ -68,7 +66,6 @@ html {
     font-size: 50px;
     color: antiquewhite;
     text-align: center;
-    background-color: brown;
   }
 
    /* welcome section */
