@@ -7,28 +7,35 @@ try {
  console.error(error)
 }}
 
-//example
-function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then
-    (async (data) => {
-for (const pokemon of data.results) {
-    await getAPIData(pokemon.url).then((pokeData) => {
-        console.log(pokeData)
-        populatePokeCard(pokeData)
-    })
-}
-    })
+//cards loading with names
+async function loadCards() {
+    let apiResults = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=50`);
+    //console.log(apiResults)
+    for(let entry of apiResults) {
+        console.log(entry.name);
+        populatePokeCard(entry.name);
+    }
 }
 
-const pokemonGrid = document.querySelector('.pokemonGrid')
+async function getAPIData(url) {
+    try {
+        let output;
+        await fetch(url)
+        .then(response => response.json())
+        .then(data => output = data.results)
+        //.then(() => console.log(output));
+        return output;
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 function populatePokeCard(pokemon) {
-    let cardFront = document.createElement('div')
-    let frontLabel = document.createElement('p')
-
-    frontLabel.textContent = pokemon.name
-    cardFront.appendChild(frontLabel)
-    pokemonGrid.appendChild(cardFront)
+    let parentDiv = document.getElementById("pokemonGrid");
+    parentDiv.innerHTML += `
+    <div id="${pokemon}Card" class="card"> 
+    <p id="${pokemon}CardTitle" class="cardText">${pokemon} </p> 
+    </div>`
 }
 
-loadPage()
+document.body.onload = loadCards;
