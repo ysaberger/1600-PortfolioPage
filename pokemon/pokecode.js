@@ -39,3 +39,9 @@ function populatePokeCard(pokemon) {
 }
 
 document.body.onload = loadCards;
+
+//click event
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});
