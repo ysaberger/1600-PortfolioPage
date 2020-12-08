@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-.card {
+/*.card {
     background-color: blue;
     border: 5px solid black;
     border-radius: 25px;
@@ -13,96 +13,27 @@
     height: 300px;
       }
 
-/* transition: transform 1s;
-    transform-style: preserve-3d;
-    cursor: pointer;*/
-
 .cardText {
     font: "Lucida Console";
     font-size:  50px;
     font-weight: bolder;
     color: yellow;
     text-align: center;
-}
+}*/
+
+body { font-family: sans-serif; }
 
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-body { font-family: sans-serif; }
 
 .scene {
-  width: 200px;
-  height: 260px;
-  border: 1px solid #CCC;
-  margin: 40px 0;
-  perspective: 600px;
-}
-
-
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 260px;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  backface-visibility: hidden;
-}
-
-.card__face--front {
-  background: red;
-}
-
-.card__face--back {
-  background: blue;
-  transform: rotateY(180deg);
-}
-
-/* card__face card__face--back*/
-
-/*//cards loading with names
-async function loadCards() {
-    let apiResults = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=0`);
-    //console.log(apiResults)
-    for(let entry of apiResults) {
-        console.log(entry.name);
-        populatePokeCard(entry.name);
-    }
-}
-
-async function getAPIData(url) {
-    try {
-        let output;
-        await fetch(url)
-        .then(response => response.json())
-        .then(data => output = data.results)
-        //.then(() => console.log(output));
-        return output;
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-function populatePokeCard(pokemon) {
-    let parentDiv = document.getElementById("pokemonGrid");
-    parentDiv.innerHTML += `
-    <div id="${pokemon}Card" class="card"> 
-    <p id="${pokemon}CardTitle" class="cardText">${pokemon} </p> 
-    </div>`
-}
-
-document.body.onload = loadCards;
-
-//click event
-var card = document.querySelector('.card');
-card.addEventListener( 'click', function() {
-  card.classList.toggle('is-flipped');
-});*/
+    width: 200px;
+    height: 260px;
+    border: 1px solid #CCC;
+    margin: 40px 0;
+    perspective: 600px;
+  }
+  
