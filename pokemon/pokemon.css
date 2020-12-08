@@ -8,14 +8,14 @@
     border: 5px solid black;
     border-radius: 25px;
     padding: 20px;
+    margin: 5px;
     width: 300px;
-    height: 150px;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    position: relative;
+    height: 300px;
       }
-}
+
+/* transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;*/
 
 .cardText {
     font: "Lucida Console";
@@ -25,6 +25,11 @@
     text-align: center;
 }
 
+.pokemonGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 body { font-family: sans-serif; }
 
 .scene {
@@ -61,3 +66,43 @@ body { font-family: sans-serif; }
   transform: rotateY(180deg);
 }
 
+/* card__face card__face--back*/
+
+/*//cards loading with names
+async function loadCards() {
+    let apiResults = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=0`);
+    //console.log(apiResults)
+    for(let entry of apiResults) {
+        console.log(entry.name);
+        populatePokeCard(entry.name);
+    }
+}
+
+async function getAPIData(url) {
+    try {
+        let output;
+        await fetch(url)
+        .then(response => response.json())
+        .then(data => output = data.results)
+        //.then(() => console.log(output));
+        return output;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function populatePokeCard(pokemon) {
+    let parentDiv = document.getElementById("pokemonGrid");
+    parentDiv.innerHTML += `
+    <div id="${pokemon}Card" class="card"> 
+    <p id="${pokemon}CardTitle" class="cardText">${pokemon} </p> 
+    </div>`
+}
+
+document.body.onload = loadCards;
+
+//click event
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});*/
