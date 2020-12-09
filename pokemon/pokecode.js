@@ -35,7 +35,7 @@ function populatePokeCard(pokemon) {
     let backLabel = document.createElement('p')
 
     frontLabel.textContent = pokemon.name
-    frontImage.src = `./images/00${pokemon.id}.png`
+    frontImage.src = `./images/${getImageFileName(pokemon)}.png`
     backLabel.textContent = `Say hello to the back`
     cardFront.appendChild(frontImage)
     cardFront.appendChild(frontLabel)
@@ -44,6 +44,14 @@ function populatePokeCard(pokemon) {
     pokeCard.appendChild(cardBack)
     pokeScene.appendChild(pokeCard)
     pokemonGrid.appendChild(pokeScene)
+}
+
+function getImageFileName(pokemon) {
+    if (pokemon.id < 10) {
+        return `00${pokemon.id}`
+    } else if (pokemon.id > 9 && pokemon.id < 99) {
+        return `0${pokemon.id}`
+    }
 }
 
 loadPage()
