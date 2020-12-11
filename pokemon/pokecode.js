@@ -29,17 +29,19 @@ function populatePokeCard(pokemon) {
     let pokeCard = document.createElement('div')
     pokeCard.className = 'card'
     pokeCard.addEventListener('click', () => {
-        console.log(`You clicked on ${pokemon.name}`)
+        pokeCard.classList.toggle('is-flipped')
     })
+
     pokeCard.appendChild(populateCardFront(pokemon))
     pokeCard.appendChild(populateCardBack(pokemon))
+
     pokeScene.appendChild(pokeCard)
     pokemonGrid.appendChild(pokeScene)
 }
 
 function populateCardFront(pokemon) {
     let cardFront = document.createElement('div')
-    cardFront.className = `card__face`
+    cardFront.className = `card__face card__face--front`
     let frontLabel = document.createElement('p')
     let frontImage = document.createElement('img')
     frontLabel.textContent = pokemon.name
@@ -52,10 +54,11 @@ function populateCardFront(pokemon) {
 
 function populateCardBack(pokemon){
     let cardBack = document.createElement('div')
+    cardBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
     backLabel.textContent = `Say hello to the back`
     cardBack.appendChild(backLabel)
-    returnCardBack
+    return cardBack
 
 }
 
