@@ -28,22 +28,35 @@ function populatePokeCard(pokemon) {
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
     pokeCard.className = 'card'
-    let cardFront = document.createElement('div')
-    let frontLabel = document.createElement('p')
-    let frontImage = document.createElement('img')
-    let cardBack = document.createElement('div')
-    let backLabel = document.createElement('p')
-
-    frontLabel.textContent = pokemon.name
-    frontImage.src = `./images/${getImageFileName(pokemon)}.png`
-    backLabel.textContent = `Say hello to the back`
-    cardFront.appendChild(frontImage)
-    cardFront.appendChild(frontLabel)
-    cardBack.appendChild(backLabel)
-    pokeCard.appendChild(cardFront)
-    pokeCard.appendChild(cardBack)
+    pokeCard.addEventListener('click', () => {
+        console.log(`You clicked on ${pokemon.name}`)
+    })
+    pokeCard.appendChild(populateCardFront(pokemon))
+    pokeCard.appendChild(populateCardBack(pokemon))
     pokeScene.appendChild(pokeCard)
     pokemonGrid.appendChild(pokeScene)
+}
+
+function populateCardFront(pokemon) {
+    let cardFront = document.createElement('div')
+    cardFront.className = `card__face`
+    let frontLabel = document.createElement('p')
+    let frontImage = document.createElement('img')
+    frontLabel.textContent = pokemon.name
+    frontImage.src = `./images/${getImageFileName(pokemon)}.png`
+    cardFront.appendChild(frontImage)
+    cardFront.appendChild(frontLabel)
+    return cardFront
+}
+
+
+function populateCardBack(pokemon){
+    let cardBack = document.createElement('div')
+    let backLabel = document.createElement('p')
+    backLabel.textContent = `Say hello to the back`
+    cardBack.appendChild(backLabel)
+    returnCardBack
+
 }
 
 function getImageFileName(pokemon) {
