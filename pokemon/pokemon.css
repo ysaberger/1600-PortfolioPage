@@ -2,6 +2,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* pokemon logo */
+.logo {
+    max-height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+}
 /* pokemon theme song music player */
 
 #wrapper
@@ -97,8 +105,3 @@ body { font-family: sans-serif; }
   .card.is-flipped {
       transform: rotateY(180deg)
   }
-
-
-
-  /* reject code */
-
