@@ -77,26 +77,19 @@ loadPage()
 document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
 var player;
 
+play.addEventListener('click', () => {
+    player.play();
+})
+
+pause.addEventListener('click', () => {
+    player.pause();
+})
+
+vol.addEventListener('click', () => {
+    player.volume=document.getElementById("vol").value;
+})
 function startplayer() 
 {
  player = document.getElementById('music_player');
  player.controls = false;
-}
-
-function play_aud() 
-{
- player.play();
-} 
-function pause_aud() 
-{
- player.pause();
-}
-function stop_aud() 
-{
- player.pause();
- player.currentTime = 0;
-}
-function change_vol()
-{
- player.volume=document.getElementById("change_vol").value;
 }
