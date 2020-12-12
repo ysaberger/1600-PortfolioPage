@@ -55,12 +55,20 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon){
     let cardBack = document.createElement('div')
     cardBack.className = 'card__face card__face--back'
-    let backLabel = document.createElement('p')
-    backLabel.textContent = `Say hello to the back`
+    let backLabel = document.createElement('h3')
+    backLabel.textContent = 'Abilities:'
+    let abilityList = document.createElement('ul')
+    pokemon.abilities.forEach(ability => {
+        let abilityName = document.createElement('li')
+        abilityName.textContent = ability.ability.name
+        abilityList.appendChild(abilityName)
+    })
     cardBack.appendChild(backLabel)
-    return cardBack
+    cardBack.appendChild(abilityList)
 
+    return cardBack
 }
+
 
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
@@ -93,3 +101,4 @@ function startplayer()
  player = document.getElementById('music_player');
  player.controls = false;
 }
+

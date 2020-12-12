@@ -2,6 +2,8 @@
     margin: 0;
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 /* pokemon logo */
 .logo {
     max-height: 300px;
@@ -9,11 +11,15 @@
     margin-left: auto;
     margin-right: auto;
     padding: 2em;
-}
-header {
     color: blue;
-    justify-content: center;
+}
+    body { font-family: 'Orbitron', sans-serif;
+    background: #f30c0cb9;}
+
+    header {
+        text-align: center;
     }
+
 /* pokemon theme song music player */
 
 #wrapper
@@ -22,8 +28,8 @@ header {
  margin:0 auto;
  padding:0px;
  width:995px;
- background-color: whitesmoke;
 }
+
 #player
 {
  background-color:#084B8A;
@@ -41,42 +47,32 @@ input[type="image"]
  margin-right:5px;
  margin-top:2px;
 }
-#vol_img
-{
- margin-left:150px;
- width:20px;
-}
+
 
 /*.card {
     background-color: blue;
     border: 5px solid black;
-    border-radius: 25px;
     padding: 20px;
     margin: 5px;
     width: 300px;
     height: 300px;
-      }
 
-.cardText {
-    font: "Lucida Console";
-    font-size:  50px;
-    font-weight: bolder;
-    color: yellow;
-    text-align: center;
 }*/
-
-body { font-family: sans-serif; }
 
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    font: 'Orbitron';
+    text-align: center;
 }
 
+.pokemonGrid img {
+    padding-top: 20px;
+}
 .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid #CCC;
     margin: 40px 0;
     perspective: 600px;
   }
@@ -87,8 +83,10 @@ body { font-family: sans-serif; }
     transition: transform 1s;
     transform-style: preserve-3d;
     cursor: pointer;
-    position: relative;
+    border-radius: 10px;
+    border: 5px solid rgb(255, 230, 0);
   }
+
   
   .card__face {
       position: absolute;
@@ -98,14 +96,31 @@ body { font-family: sans-serif; }
   }
 
   .card__face--front {
-      background: red;
+    background: linear-gradient(#f8bf45, #084B8A);
+      font-size: 25px;
+      font-weight: bolder;
+      color: yellow;
   }
 
   .card__face--back {
-      background: blue;
+      background: #02046d;
       transform: rotateY(180deg);
+      font-size: 20px;
+      font-weight: bolder;
+      color: rgb(255, 230, 0);
   }
 
   .card.is-flipped {
       transform: rotateY(180deg)
   }
+
+  /*async function getPokemonSpecies(pokemon) {
+    await fetch(pokemon.url)
+    .then(response => response.json())
+    .then(data => output = data.getPokemonSpecies);
+    //console.log(output);
+    return output.map((item) => {
+        //console.log(item);
+        return `${item.species.name}`;
+    });
+}*/
