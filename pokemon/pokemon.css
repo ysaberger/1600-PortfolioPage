@@ -20,6 +20,16 @@
         text-align: center;
     }
 
+    button {
+        background-color: yellow;
+        padding: 1rem;
+        margin: 2rem;
+        border-style: none;
+        border-radius: 1rem;
+        font-family: 'Orbitron';
+        text-align: center;
+    }
+
 /* pokemon theme song music player */
 
 #wrapper
@@ -124,3 +134,71 @@ input[type="image"]
         return `${item.species.name}`;
     });
 }*/
+
+/*function loadPage() {
+  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${pokemonCount}`).then
+    //console.log(apiResults)
+    (async (data) => {
+        for(const pokemon of data.results) {
+            await getAPIData(pokemon.url).then((pokeData) => {
+            populatePokeCard(pokeData)
+        })
+    }
+    })
+}*/
+
+
+/*
+const pokemonGrid = document.querySelector('.pokemonGrid')
+const loadButton = document.querySelector('button')
+const newButton = document.querySelector('#newPokemon')
+
+loadButton.addEventListener('click', () => {
+    loadPage()
+    loadButton.diabled = true
+})
+
+newButton.addEventListener('click', () =>  {
+    let pokeName = prompt("What's your new Pokemon's name")
+    populatePokeCard(createNewPokemon(pokeName))
+})
+
+function Pokemon(name, abilities, move){
+    this.name = name
+    this.abilities = abilities
+    this.move = move
+
+}
+function createNewPokemon(name) {
+  return new Pokemon(name, 450, 200, ['gorge', 'sleep', 'cough'], ['thunder', 'dance'])
+}
+
+function removeChildren(container) {
+    while (container.firstChild) { 
+container.removeChild(container.firstChild)
+}
+}*/
+
+/*const mainContent= document.querySelector('main')
+
+const mainHeader = document.createElement('header')
+mainHeader.className = 'mainHeader'
+document.body.insertBefore(mainHeader, mainContent)
+
+const moreButton = document.createElement('button')
+moreButton.textContent = 'Add More Pokemon'
+mainHeader.appendChild(moreButton)
+
+moreButton.addEventListener('click', event => {
+   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=9&offset=9`).then
+   (async (data) => {
+    for(const pokemon of data.results) {
+        await getAPIData ('https://pokeapi.co/api/v2/pokemon/101').then((pokeData) => {
+        populatePokeCard(pokeData) }
+) } } ) } )
+
+function removeChildren(container) {
+    while (container.firstChild) { 
+container.removeChild(container.firstChild)
+}}
+*/

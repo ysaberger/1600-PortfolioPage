@@ -8,6 +8,37 @@ async function getAPIData(url) {
      console.error(error)
     }}
 
+//you almost can add more cards!!!! you can do it!!
+const pokemonGrid = document.querySelector('.pokemonGrid')
+const loadButton = document.querySelector('button')
+const newButton = document.querySelector('#newPokemon')
+
+loadButton.addEventListener('click', () => {
+    loadPage()
+    loadButton.diabled = true
+})
+
+newButton.addEventListener('click', () =>  {
+    let pokeName = prompt("What's your new Pokemon's name")
+    populatePokeCard(createNewPokemon(pokeName))
+})
+
+function Pokemon(name, abilities, move){
+    this.name = name
+    this.abilities = abilities
+    this.move = move
+
+}
+function createNewPokemon(name) {
+  return new Pokemon(name, 450, 200, ['gorge', 'sleep', 'cough'], ['thunder', 'dance'])
+}
+
+function removeChildren(container) {
+    while (container.firstChild) { 
+container.removeChild(container.firstChild)
+}
+}
+
 //cards loading with names
 function loadPage() {
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=0`).then
@@ -20,8 +51,6 @@ function loadPage() {
     }
     })
 }
-
-const pokemonGrid = document.querySelector('.pokemonGrid')
 
 function populatePokeCard(pokemon) {
     let pokeScene = document.createElement('div')
@@ -58,18 +87,31 @@ function populateCardBack(pokemon){
     let backLabel = document.createElement('h3')
     backLabel.textContent = 'Abilities:'
     let abilityList = document.createElement('ul')
+   // I've tried so hard to fix this bug but nothing works :'(
     pokemon.abilities.forEach(ability => {
         let abilityName = document.createElement('li')
         abilityName.textContent = ability.ability.name
         abilityList.appendChild(abilityName)
     })
+    let movesLabel = document.createElement('h4')
+    movesLabel.textContent = 'Most Accurate Move:'
+    let moveAccuracy = document.createElement('h5')
+    const mostAccurateMove = getBestAccuracy(pokemon.moves)
+    console.log(mostAccurateMove.move)
+    moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
-
+    cardBack.appendChild(movesLabel)
+    cardBack.appendChild(moveAccuracy)
     return cardBack
 }
 
-
+function getBestAccuracy(pokemoves) {
+    return pokemoves.reduce((mostAccurate, move) => {
+        console.log(move)
+        return mostAccurate.accuracy > move.accuracy ? mostAccurate : move;
+    }, {});
+}
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
         return `00${pokemon.id}`
