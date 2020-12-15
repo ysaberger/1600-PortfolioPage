@@ -24,7 +24,7 @@ document.getElementById("newPokeCard").addEventListener("change", () => {
 
 async function loadCards() {
     let apiResults = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${pokemonCount}`);
-    //console.log(apiResults)
+    let i = 0;
     for(let entry of apiResults) {
         //console.log(entry.name);
         let stats = await getPokemonStats(entry);
@@ -34,13 +34,15 @@ async function loadCards() {
             stats: stats
         }
         pokemonData.push(newPokemon);
-        populatePokeCard(newPokemon);
+        populatePokeCard(newPokemon, i);
+        i++;
     }
     pageSet = false;
 }
 
 async function newPokeCard(pokemonName) {
     let apiResults = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${maxPokemon}`);
+    let i = 0;
     for(let entry of apiResults) {
         if(entry.name == pokemonName.toLowerCase()) { 
             let stats = await getPokemonStats(entry);
@@ -50,22 +52,28 @@ async function newPokeCard(pokemonName) {
                 stats: stats
             }
             pokemonData.push(newPokemon);
-            populatePokeCard(newPokemon);
+            populatePokeCard(newPokemon, i);
             pageSet = false;
-        }
+        } 
+        i++;
     }
  
 }
 
 //Basic Javascript- good use of array
-function populatePokeCard(pokemon) {
+function populatePokeCard(pokemon, i) {
+    let pokeImg = pokemon.name
+    if(i > 24) {
+        pokeImg="ball"
+    }
+    
     let parentDiv = document.getElementById("pokemonGrid");
     parentDiv.innerHTML += `
     <div class="scene">
         <div id="${pokemon.name}Card" class="card">
             <div id="${pokemon.name}Front" class="card-face card-is-front">
                 <p id="${pokemon.name}CardTitle" class="cardText">${pokemon.name} </p>
-                <img id="${pokemon.name}Image" class="image" src="./images/${pokemon.name}.png">
+                <img id="${pokemon.name}Image" class="image" src="./images/${pokeImg}.png">
             </div>
             <div id="${pokemon.name}Back" class="card-face card-is-back">
                 <p id="${pokemon.name}Stats" class="cardText"> Stats </p>
