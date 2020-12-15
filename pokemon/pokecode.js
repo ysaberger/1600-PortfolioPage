@@ -18,7 +18,8 @@ let pokemonCount = 3;
 let maxPokemon = 25;
 
 document.getElementById("newPokeCard").addEventListener("change", () => { 
-console.log("hello")
+    console.log(document.getElementById("newPokeCard").value)
+    newPokeCard(document.getElementById("newPokeCard").value)
 }); 
 
 async function loadCards() {
@@ -35,6 +36,24 @@ async function loadCards() {
         pokemonData.push(newPokemon);
         populatePokeCard(newPokemon);
     }
+    pageSet = false;
+}
+
+async function newPokeCard(pokemonName) {
+    let apiResults = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${maxPokemon}`);
+    for(let entry of apiResults) {
+        if(entry.name == pokemonName) { 
+            console.log("We found it!")
+        }
+    }
+    let stats = await getPokemonStats(entry);
+    let newPokemon = {
+        name: entry.name,
+        url: entry.url,
+        stats: stats
+    }
+    pokemonData.push(newPokemon);
+    populatePokeCard(newPokemon);
     pageSet = false;
 }
 
