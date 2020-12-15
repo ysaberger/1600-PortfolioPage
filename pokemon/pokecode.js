@@ -12,7 +12,6 @@ async function getAPIData(url) {
     }
 }
 
-//ES6- proper use of let and const variables
 let pokemonData = [];
 let pageSet = true;
 let pokemonCount = 25;
@@ -33,7 +32,8 @@ async function loadCards() {
     }
     pageSet = false;
 }
-//ES6- proper use of let and const variables
+
+//Basic Javascript- good use of array
 function populatePokeCard(pokemon) {
     let parentDiv = document.getElementById("pokemonGrid");
     parentDiv.innerHTML += `
@@ -54,9 +54,9 @@ function populatePokeCard(pokemon) {
             </div>
         </div>
     </div>`
-
 }
 
+//Basic Data Structures- objects with key values
 async function getPokemonStats(pokemon) {
     await fetch(pokemon.url)
     .then(response => response.json())
@@ -81,6 +81,7 @@ document.getElementById("hoverArea").addEventListener('mouseover', () => {
         }
     }
 });
+
 document.getElementById("pokemonCount").addEventListener('change', function() {
     pokemonCount = document.getElementById("pokemonCount").value;
     document.getElementById("pokemonGrid").innerHTML = "";

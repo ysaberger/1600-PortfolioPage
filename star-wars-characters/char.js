@@ -6,6 +6,7 @@ const mainHeader = document.createElement('header')
 mainHeader.className = 'mainHeader'
 document.body.insertBefore(mainHeader, mainContent)
 
+//Basic Data Structures- object with properties accessed using dot notation
 const femaleButton = document.createElement('button')
 femaleButton.textContent = 'Female Characters'
 mainHeader.appendChild(femaleButton)
@@ -18,7 +19,8 @@ const otherButton = document.createElement('button')
 otherButton.textContent = 'Other Characters'
 mainHeader.appendChild(otherButton)
 
-
+//Basic Javascript- good use of value comparison, comparison operators
+//ES6- use of arrow functions
 const maleCharacters = people.filter((person) => person.gender === 'male')
 
 const femaleCharacters = people.filter((person) => person.gender === 'female')
@@ -31,7 +33,7 @@ femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
 
 otherButton.addEventListener('click', () => populateDOM(otherCharacters))
 
-
+//ES6- proper use of let and const variables
 function populateDOM(characters) {
     removeChildren(mainContent)
 characters.forEach((element) => {

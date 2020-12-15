@@ -7,6 +7,7 @@ const main = document.querySelector('main')
 films.sort();
 c;*/
 
+//Basic Data Structure- using Arrays to store and manipulate collections of data
 films.sort((a, b) => {
     console.log( a.episode_id, b.episode_id)
     return a.episode_id - b.episode_id
@@ -26,8 +27,6 @@ let sortedFilms = (inputArr) => {
    orderedFilms.push (episode_id(sort))
 };*/
 
-
-
 for (let film of films) {
     let figure = document.createElement('figure')
     let figImg = document.createElement('img')
@@ -35,7 +34,8 @@ for (let film of films) {
     figCaption.textContent = film.title
 
    
-
+//Basic Javascript- good use of conditional logic
+//ES6- use of string using template literals
     if (film.episode_id === 1) {1
         figImg.src = `https://starwars-visualguide.com/assets/img/films/4.jpg`
     } else if (film.episode_id === 5) {
