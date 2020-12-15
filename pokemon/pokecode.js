@@ -43,18 +43,18 @@ async function newPokeCard(pokemonName) {
     let apiResults = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${maxPokemon}`);
     for(let entry of apiResults) {
         if(entry.name == pokemonName) { 
-            console.log("We found it!")
+            let stats = await getPokemonStats(entry);
+            let newPokemon = {
+                name: entry.name,
+                url: entry.url,
+                stats: stats
+            }
+            pokemonData.push(newPokemon);
+            populatePokeCard(newPokemon);
+            pageSet = false;
         }
     }
-    let stats = await getPokemonStats(entry);
-    let newPokemon = {
-        name: entry.name,
-        url: entry.url,
-        stats: stats
-    }
-    pokemonData.push(newPokemon);
-    populatePokeCard(newPokemon);
-    pageSet = false;
+ 
 }
 
 //Basic Javascript- good use of array
