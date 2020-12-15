@@ -33,7 +33,7 @@ async function loadCards() {
     }
     pageSet = false;
 }
-//
+//ES6- proper use of let and const variables
 function populatePokeCard(pokemon) {
     let parentDiv = document.getElementById("pokemonGrid");
     parentDiv.innerHTML += `
@@ -88,27 +88,3 @@ document.getElementById("pokemonCount").addEventListener('change', function() {
     loadCards();
 })
 document.body.onload = loadCards;
-
-//theme song music player functions
-
-document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
-var player;
-
-play.addEventListener('click', () => {
-    player.play();
-})
-
-pause.addEventListener('click', () => {
-    player.pause();
-})
-
-vol.addEventListener('click', () => {
-    player.volume=document.getElementById("vol").value;
-})
-
-function startplayer() 
-{
- player = document.getElementById('music_player');
- player.controls = false;
-}
-

@@ -43,30 +43,13 @@ label {
         }
 /* pokemon theme song music player */
 
-#wrapper
-{
- margin:0 auto;
- padding:30px;
- width:995px;
-}
-
 #player
 {
  background-color:#084B8A;
- width:300px;
- box-sizing:border-box;
+ width: 375px;
 margin: 0 auto;
 padding: .5em;
 border-radius: 5px;
-}
-
-input[type="image"]
-{
- float:left;
- height:20px;
- margin-left:2px;
- margin-right:5px;
- margin-top:5px;
 }
 /* pokemon cards */
 .cardText {
@@ -145,3 +128,25 @@ input[type="image"]
         font: 'Orbitron';
         text-align: center;
 }
+
+/* extra JS code for music player
+document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
+var player;
+
+play.addEventListener('click', () => {
+    player.play();
+})
+
+pause.addEventListener('click', () => {
+    player.pause();
+})
+
+vol.addEventListener('click', () => {
+    player.volume=document.getElementById("vol").value;
+})
+
+function startplayer() 
+{
+ player = document.getElementById('music_player');
+ player.controls = false;
+}*/
