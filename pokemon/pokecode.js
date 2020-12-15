@@ -14,8 +14,8 @@ async function getAPIData(url) {
 
 let pokemonData = [];
 let pageSet = true;
-let pokemonCount = 3;
-let maxPokemon = 25;
+let pokemonCount = 25;
+let maxPokemon = 200;
 
 document.getElementById("newPokeCard").addEventListener("change", () => { 
     console.log(document.getElementById("newPokeCard").value)
@@ -42,7 +42,7 @@ async function loadCards() {
 async function newPokeCard(pokemonName) {
     let apiResults = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${maxPokemon}`);
     for(let entry of apiResults) {
-        if(entry.name == pokemonName) { 
+        if(entry.name == pokemonName.toLowerCase()) { 
             let stats = await getPokemonStats(entry);
             let newPokemon = {
                 name: entry.name,
