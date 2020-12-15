@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
@@ -10,9 +9,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 2em;
-    color: blue;
 }
+
     body { font-family: 'Orbitron', sans-serif;
     background: #f30c0cb9;}
 
@@ -20,23 +18,22 @@
         text-align: center;
     }
 
-    button {
-        background-color: yellow;
-        padding: 1rem;
-        margin: 2rem;
-        border-style: none;
-        border-radius: 1rem;
-        font-family: 'Orbitron';
-        text-align: center;
-    }
-
+    label {
+            background-color: yellow;
+            padding: 1rem;
+            margin: 1rem;
+            border-style: none;
+            border-radius: 1rem;
+            font-family: 'Orbitron';
+            text-align: center;
+        }
 /* pokemon theme song music player */
 
 #wrapper
 {
- text-align:center;
+ text-align: center;
  margin:0 auto;
- padding:0px;
+ padding:30px;
  width:995px;
 }
 
@@ -55,150 +52,82 @@ input[type="image"]
  height:20px;
  margin-left:2px;
  margin-right:5px;
- margin-top:2px;
+ margin-top:5px;
 }
 
-
-/*.card {
-    background-color: blue;
-    border: 5px solid black;
-    padding: 20px;
-    margin: 5px;
-    width: 300px;
-    height: 300px;
-
-}*/
-
-.pokemonGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font: 'Orbitron';
+.cardText {
+    font-size:  34px;
+    font-weight: bolder;
+    color: yellow;
     text-align: center;
 }
 
-.pokemonGrid img {
-    padding-top: 20px;
+.statText {
+    font-size:  20px;
+    color: yellow;
+    text-align: left;
+    padding-left: 10px;
+    font-style: italic;
 }
+
 .scene {
-    width: 200px;
+    width: 260px;
     height: 260px;
-    margin: 40px 0;
+    border: none;
+    margin: 10px 2%;
     perspective: 600px;
   }
   
-  .card {
+.card {
     width: 100%;
     height: 100%;
     transition: transform 1s;
     transform-style: preserve-3d;
     cursor: pointer;
     border-radius: 10px;
-    border: 5px solid rgb(255, 230, 0);
-  }
+    border: 5px solid rgb(255, 230, 0)
+}
 
-  
-  .card__face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-  }
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
 
-  .card__face--front {
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 0px;
+    font-size: 40px;
+    backface-visibility: hidden;
+}
+
+.card-is-front {
     background: linear-gradient(#f8bf45, #084B8A);
       font-size: 25px;
       font-weight: bolder;
       color: yellow;
-  }
-
-  .card__face--back {
-      background: #02046d;
-      transform: rotateY(180deg);
-      font-size: 20px;
-      font-weight: bolder;
-      color: rgb(255, 230, 0);
-  }
-
-  .card.is-flipped {
-      transform: rotateY(180deg)
-  }
-
-  /*async function getPokemonSpecies(pokemon) {
-    await fetch(pokemon.url)
-    .then(response => response.json())
-    .then(data => output = data.getPokemonSpecies);
-    //console.log(output);
-    return output.map((item) => {
-        //console.log(item);
-        return `${item.species.name}`;
-    });
-}*/
-
-/*function loadPage() {
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${pokemonCount}`).then
-    //console.log(apiResults)
-    (async (data) => {
-        for(const pokemon of data.results) {
-            await getAPIData(pokemon.url).then((pokeData) => {
-            populatePokeCard(pokeData)
-        })
-    }
-    })
-}*/
-
-
-/*
-const pokemonGrid = document.querySelector('.pokemonGrid')
-const loadButton = document.querySelector('button')
-const newButton = document.querySelector('#newPokemon')
-
-loadButton.addEventListener('click', () => {
-    loadPage()
-    loadButton.diabled = true
-})
-
-newButton.addEventListener('click', () =>  {
-    let pokeName = prompt("What's your new Pokemon's name")
-    populatePokeCard(createNewPokemon(pokeName))
-})
-
-function Pokemon(name, abilities, move){
-    this.name = name
-    this.abilities = abilities
-    this.move = move
-
-}
-function createNewPokemon(name) {
-  return new Pokemon(name, 450, 200, ['gorge', 'sleep', 'cough'], ['thunder', 'dance'])
 }
 
-function removeChildren(container) {
-    while (container.firstChild) { 
-container.removeChild(container.firstChild)
+.card-is-back{
+    background: #02046d;
+    transform: rotateY(180deg);
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(255, 230, 0);
 }
-}*/
+  
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+}
 
-/*const mainContent= document.querySelector('main')
-
-const mainHeader = document.createElement('header')
-mainHeader.className = 'mainHeader'
-document.body.insertBefore(mainHeader, mainContent)
-
-const moreButton = document.createElement('button')
-moreButton.textContent = 'Add More Pokemon'
-mainHeader.appendChild(moreButton)
-
-moreButton.addEventListener('click', event => {
-   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=9&offset=9`).then
-   (async (data) => {
-    for(const pokemon of data.results) {
-        await getAPIData ('https://pokeapi.co/api/v2/pokemon/101').then((pokeData) => {
-        populatePokeCard(pokeData) }
-) } } ) } )
-
-function removeChildren(container) {
-    while (container.firstChild) { 
-container.removeChild(container.firstChild)
-}}
-*/
+.pokemonGrid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font: 'Orbitron';
+        text-align: center;
+}

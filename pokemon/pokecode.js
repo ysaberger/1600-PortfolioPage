@@ -105,6 +105,7 @@ pause.addEventListener('click', () => {
 vol.addEventListener('click', () => {
     player.volume=document.getElementById("vol").value;
 })
+
 function startplayer() 
 {
  player = document.getElementById('music_player');

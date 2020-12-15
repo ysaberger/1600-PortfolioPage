@@ -5,19 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="pokemon.css"/>
         <title>Pokemon Cards</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+    </head>
+    <body>
+        <div id="hoverArea">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <img src="images/pokelogo.png" class="logo">
             <h1>Gotta Catch 'em All!</h1>
-           <button>Add More Pokemon </button>
-           <button id="newPokemon">Add New Pokemon</button>
-        </header>
-        <main>
-            <!-- pokemon theme song music player-->
-            <div id="wrapper">
+             <!-- pokemon theme song music player-->
+             <div id="wrapper">
                 <div id='player'>
                 <audio id="music_player">
                 <source src="Pokémon Theme Song (Music Video).mp3"/>
@@ -28,12 +27,18 @@
                 <input type="range" id="vol" step="0.05" min="0" max="1" value="1">
                 </div>
                 </div>
- <!-- pokemon cards grid-->
-            <div id="pokemonGrid" class="pokemonGrid"><p></p></div>
-            <div id="pokemonGrid" class="pokemonGrid"></div>
-        </main>
-        <footer>
-        </footer>
-        <script src='pokecode.js' type="module"></script>
+                
+            <label for="pokemonCount">Number Of Pokemon Displayed: </label>
+            <input type="text" name="pokemonCount" id="pokemonCount" value="25">
+            <label for="pokemonGet">Add This Pokemon To Display: </label>
+            <input type="text" name="pokemonGet" id="pokemonGet">
+            <main>
+                <div id="pokemonGrid" class="pokemonGrid"></div>
+            </main>
+            <footer>
+            </footer>
+            <script src='pokecode.js'></script>
+        </div>
     </body>
 </html>
+
