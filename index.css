@@ -21,7 +21,7 @@ html {
 }
 /* navbar jazz */
 #navbar {
-    background-color: #ddd;
+    background-color: #b1b1b3;
     display: flex;
     justify-content: flex-end;
     z-index:1;

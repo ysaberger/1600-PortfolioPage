@@ -17,21 +17,34 @@
     header {
         text-align: center;
     }
+/* pokemon additions */
 
     label {
-            background-color: yellow;
-            padding: 1rem;
+        padding: 1rem;
             margin: 1rem;
             border-style: none;
             border-radius: 1rem;
             font-family: 'Orbitron';
             text-align: center;
         }
+
+input {
+background-color: white;
+border-radius: 5px;
+padding: .5em;
+}
+
+label {
+    font-size: 1em;
+    font-weight: bold;
+}
+.space {
+            padding: 1em;
+        }
 /* pokemon theme song music player */
 
 #wrapper
 {
- text-align: center;
  margin:0 auto;
  padding:30px;
  width:995px;
@@ -40,10 +53,11 @@
 #player
 {
  background-color:#084B8A;
- width:400px;
- margin-left:300px;
- padding:5px;
+ width:300px;
  box-sizing:border-box;
+margin: 0 auto;
+padding: .5em;
+border-radius: 5px;
 }
 
 input[type="image"]
@@ -54,7 +68,7 @@ input[type="image"]
  margin-right:5px;
  margin-top:5px;
 }
-
+/* pokemon cards */
 .cardText {
     font-size:  34px;
     font-weight: bolder;
